@@ -1,2 +1,2 @@
 # kore-plugins-celery
-Celery plugins for kore framework
+Celery plugins for [Kore](https://github.com/p1c2u/kore) framework.
