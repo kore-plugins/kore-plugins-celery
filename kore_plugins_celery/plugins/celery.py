@@ -13,8 +13,10 @@ class CeleryPluginComponent(BasePluginComponent):
         )
 
     def pre_hook(self, container):
-        if 'kore.components.celery.application' not in container:
-            raise RuntimeError("Celery application not found in container")
+        if 'kore.components.celery.application' in container:
+            return
+
+        container['kore.components.celery.application'] = Celery()
 
     def config(self, container):
         config = container('config')
