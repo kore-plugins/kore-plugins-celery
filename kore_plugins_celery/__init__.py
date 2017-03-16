@@ -5,7 +5,7 @@ from celery import signals
 
 from kore import config_factory, container_factory
 from kore.configs.exceptions import ConfigPluginNotFoundError
-from kore_plugins_celery.lib.parsers import KVParser
+from kore_shell.lib.parsers import KVParser
 
 __author__ = 'Artur Maciąg'
 __email__ = 'maciag.artur@gmail.com'
