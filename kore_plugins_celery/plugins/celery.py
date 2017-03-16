@@ -1,5 +1,7 @@
 import logging
 
+from celery import Celery
+
 from kore.components.plugins.base import BasePluginComponent
 
 log = logging.getLogger(__name__)
