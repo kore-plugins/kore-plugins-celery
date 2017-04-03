@@ -18,7 +18,7 @@ def celery_config():
 
 @pytest.fixture(scope='session')
 def config(celery_config):
-    return config_factory.create('dict', {'celery': celery_config})
+    return config_factory.create('dict', celery=celery_config)
 
 
 @pytest.fixture
