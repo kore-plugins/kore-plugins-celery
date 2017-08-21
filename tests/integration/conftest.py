@@ -13,6 +13,7 @@ def celery_config():
         'main': 'test',
         'broker_url': 'memory://',
         'result_backend': 'cache+memory://',
+        'worker_hijack_root_logger': True,
     }
 
 

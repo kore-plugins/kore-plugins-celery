@@ -35,6 +35,8 @@ class CeleryPluginComponent(BasePluginComponent):
         task_serializer = config.get('task_serializer', 'json')
         result_serializer = config.get('result_serializer', 'json')
         timezone = config.get('timezone', 'UTC')
+        worker_hijack_root_logger = config.get(
+            'worker_hijack_root_logger', False)
 
         app.conf.update(
             broker_url=broker_url,
@@ -42,4 +44,5 @@ class CeleryPluginComponent(BasePluginComponent):
             task_serializer=task_serializer,
             result_serializer=result_serializer,
             timezone=timezone,
+            worker_hijack_root_logger=worker_hijack_root_logger,
         )

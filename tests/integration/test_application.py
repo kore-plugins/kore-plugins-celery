@@ -16,6 +16,15 @@ class TestApplication(object):
     def task(self, task_func):
         return shared_task(task_func)
 
+    def test_config(self, application, celery_config):
+        config = celery_config.copy()
+        app_main = config.pop('main')
+
+        assert application.main == app_main
+
+        for key, value in config.items():
+            assert getattr(application.conf, key) == value
+
     def test_ping(self, application, application_worker):
         assert tasks.ping() == 'pong'
 
